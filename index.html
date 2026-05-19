@@ -2,86 +2,133 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>我的個人網站</title>
 
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
 
-    body {
-      font-family: "Noto Sans TC", sans-serif;
-      background: #f5f7fa;
-      color: #333;
-      line-height: 1.8;
+    body{
+      font-family: "Kosugi Maru", sans-serif;
+      background: #f8f3ea;
+      color:#5c4632;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:30px;
     }
 
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
+    .card{
+      width:100%;
+      max-width:800px;
+      background:#fff7ee;
+      border-radius:30px;
+      padding:50px 40px;
+      text-align:center;
+      box-shadow:
+        0 10px 30px rgba(125, 87, 44, 0.15),
+        inset 0 0 0 8px #f4dfc8;
+      border:3px dashed #d8b48a;
+      position:relative;
     }
 
-    .card {
-      background: white;
-      border-radius: 20px;
-      padding: 40px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      text-align: center;
+    .bread{
+      font-size:50px;
+      margin-bottom:10px;
     }
 
-    .profile-img {
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 5px solid #e5e7eb;
-      margin-bottom: 20px;
+    .profile-img{
+      width:180px;
+      height:180px;
+      object-fit:cover;
+      border-radius:50%;
+      border:8px solid #f2d2a2;
+      margin:25px 0;
+      box-shadow:0 5px 15px rgba(0,0,0,0.15);
     }
 
-    h1 {
-      font-size: 36px;
-      margin-bottom: 10px;
+    h1{
+      font-size:40px;
+      margin-bottom:10px;
+      color:#8b5a2b;
     }
 
-    p {
-      color: #666;
-      margin-bottom: 30px;
+    .subtitle{
+      font-size:18px;
+      margin-bottom:35px;
+      color:#7b6755;
+      line-height:1.8;
     }
 
-    .btn {
-      display: inline-block;
-      padding: 12px 24px;
-      margin: 10px;
-      background: #2563eb;
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      transition: 0.3s;
-      font-weight: bold;
+    .button-group{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
+      margin-top:20px;
     }
 
-    .btn:hover {
-      background: #1d4ed8;
-      transform: translateY(-2px);
+    .btn{
+      text-decoration:none;
+      padding:14px 28px;
+      border-radius:999px;
+      background:#d89b5b;
+      color:white;
+      font-size:16px;
+      transition:0.3s;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
     }
 
-    footer {
-      margin-top: 30px;
-      color: #999;
-      font-size: 14px;
+    .btn:hover{
+      background:#bf7f3f;
+      transform:translateY(-3px);
     }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 28px;
+    footer{
+      margin-top:40px;
+      font-size:14px;
+      color:#9a8877;
+    }
+
+    .bread-decoration{
+      position:absolute;
+      font-size:32px;
+      opacity:0.15;
+    }
+
+    .bread1{
+      top:20px;
+      left:25px;
+    }
+
+    .bread2{
+      bottom:20px;
+      right:25px;
+    }
+
+    @media(max-width:600px){
+
+      .card{
+        padding:35px 25px;
       }
 
-      .card {
-        padding: 30px 20px;
+      h1{
+        font-size:30px;
+      }
+
+      .profile-img{
+        width:140px;
+        height:140px;
       }
     }
   </style>
@@ -89,35 +136,44 @@
 
 <body>
 
-  <div class="container">
-    <div class="card">
+  <div class="card">
 
-      <!-- 個人照片 -->
-      <img src="me.jpg" alt="我的照片" class="profile-img">
+    <div class="bread-decoration bread1">🥐</div>
+    <div class="bread-decoration bread2">🍞</div>
 
-      <!-- 個人資訊 -->
-      <h1>你的名字</h1>
+    <div class="bread">🍞</div>
 
-      <p>
-        你好，我是一位網頁開發者 / 設計師 / 學生。<br>
-        歡迎來到我的個人網站！
-      </p>
+    <!-- 個人照片 -->
+    <img src="me.jpg" alt="我的照片" class="profile-img">
 
-      <!-- 作品集下載 -->
-      <a href="work.pdf" class="btn" target="_blank">
-        查看我的作品集
+    <!-- 名字 -->
+    <h1>你的名字</h1>
+
+    <!-- 自我介紹 -->
+    <p class="subtitle">
+      歡迎來到我的小麵包屋 ☕<br>
+      我喜歡設計、創作與烘焙般溫暖的生活感。
+    </p>
+
+    <!-- 按鈕 -->
+    <div class="button-group">
+
+      <!-- 作品集 PDF -->
+      <a href="work.pdf" target="_blank" class="btn">
+        📖 查看作品集
       </a>
 
-      <!-- 聯絡方式 -->
+      <!-- Email -->
       <a href="mailto:you@example.com" class="btn">
-        聯絡我
+        ✉️ 聯絡我
       </a>
-
-      <footer>
-        © 2026 我的個人網站
-      </footer>
 
     </div>
+
+    <footer>
+      © 2026 我的個人網站 · Bread Style
+    </footer>
+
   </div>
 
 </body>
